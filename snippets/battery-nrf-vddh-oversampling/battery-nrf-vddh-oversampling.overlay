@@ -1,0 +1,3 @@
+&vbatt {
+    compatible = "te9no,battery-nrf-vddh-oversampling";
+};

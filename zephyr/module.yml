@@ -1,0 +1,7 @@
+name: zmk-module-battery-nrf-vddh-oversampling
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .
+    snippet_root: .

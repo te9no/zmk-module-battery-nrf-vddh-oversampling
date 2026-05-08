@@ -1,0 +1,5 @@
+# SPDX-License-Identifier: MIT
+
+description: Battery SoC monitoring using nRF VDDH with configurable oversampling
+
+compatible: "te9no,battery-nrf-vddh-oversampling"

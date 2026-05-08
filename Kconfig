@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+
+config ZMK_BATTERY_NRF_VDDH_OVERSAMPLING
+    bool "ZMK nRF VDDH battery driver with configurable oversampling"
+    default y if DT_HAS_TE9NO_BATTERY_NRF_VDDH_OVERSAMPLING_ENABLED
+    select ADC
+    select ZMK_BATTERY
+    depends on SENSOR
+    help
+        Enable the external nRF VDDH battery driver. Use this by changing the
+        vbatt compatible from "zmk,battery-nrf-vddh" to
+        "te9no,battery-nrf-vddh-oversampling".
+
+config ZMK_BATTERY_NRF_VDDH_OVERSAMPLING_VALUE
+    int "nRF VDDH ADC oversampling"
+    default 4
+    range 0 8
+    depends on ZMK_BATTERY_NRF_VDDH_OVERSAMPLING
+    help
+        ADC oversampling value passed to struct adc_sequence. This replaces the
+        ZMK built-in driver's fixed ".oversampling = 0" setting.
